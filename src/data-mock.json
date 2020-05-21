@@ -1,0 +1,49 @@
+{
+    "metaData": {},
+    "customers":[
+        {
+            "id": 123,
+            "name": "Customer 1",
+            "age": 25,
+            "gender": "Male",
+            "address": [
+                { "detail": " Kalyani tech park ", "city": "Bangalore", "pin": 560076 },
+                { "detail": " Bagmane tech park ", "city": "Bangalore", "pin": 560038 }
+            ]
+        },
+        {
+            "id": 124,
+            "name": "Customer 2",
+            "age": 26,
+            "gender": "Male",
+            "address": [
+                { "detail": " Prestige shantiniketan ", "city": "Bangalore", "pin": 560067 }
+            ]
+        },
+        {
+            "id": 125,
+            "name": "Customer 3",
+            "age": 22,
+            "gender": "Female",
+            "address": [
+                { "detail": " Kalyani tech park ", "city": "Bangalore", "pin": 560076 }
+            ]
+        },
+        {
+            "id": 126,
+            "name": "Customer 4",
+            "age": 25,
+            "gender": "Male",
+            "address": [
+                { "detail": " Bagmane tech park ", "city": "Bangalore", "pin": 560038 }
+            ]
+        }, 
+        {
+            "id": 127,
+            "name": "Customer 5",
+            "age": 20,
+            "gender": "Female",
+            "address": [ ]
+        }
+    ]
+}

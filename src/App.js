@@ -1,25 +1,49 @@
 import React from 'react';
-import logo from './logo.svg';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 import './App.css';
+import data from './data-mock'
+import ListPage from './ListPage'
+import AddressPage from './AddressPage'
+import {Container, Row, Col} from 'react-bootstrap';
+import { useState, useEffect } from 'react';
 
 function App() {
+
+  const [currentAddress, setCurrentAddress] = useState([]);
+
+  const [addresses, setAddresses] = useState(new Map());
+
+  const onClick = ( id ) => {
+    setCurrentAddress( addresses.get(id) )
+  }
+
+  const mapAddresses = ( customers ) => {
+    const m = new Map()
+     customers.map( ( customer, index ) => {
+      m.set( customer.id, customer.address )
+    })
+    setAddresses(m)
+  }
+
+  useEffect( ()=> {
+    mapAddresses(data.customers)
+  }, [] )
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+  
+    <Container>
+      <Row>
+        <h1>
+          { 'Customer Details' }
+        </h1>
+      </Row>
+      <Row>
+        <Col><ListPage customers={data.customers} onClick={onClick} /></Col>
+        <Col><AddressPage currentAddress={currentAddress}/></Col>
+      </Row>
+    </Container>
+
   );
 }
 
